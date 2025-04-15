@@ -1,0 +1,650 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("../assets/font/Outfit-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Outfit";
+  src: url("../assets/font/Outfit-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Outfit";
+  src: url("../assets/font/Outfit-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Outfit";
+  src: url("../assets/font/Outfit-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ovo";
+  src: url("../assets/font/Ovo-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Outfit";
+  src: url("../assets/font/Outfit-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+:root {
+  --primary-font: "Ovo", serif;
+  --secondary-font: "Outfit", serif;
+  --title-size: 48px;
+  --title-secondary: 18px;
+  --primary-fontsize: 16px;
+  --button-padding: 16px 8px;
+}
+
+body {
+  background: fixed url(../assets/img/png/header-bg-color.png) no-repeat center/cover;
+  overflow-x: hidden;
+}
+
+.background-image {
+  position: fixed;
+  opacity: 0.4;
+  top: 0;
+  right: 0;
+  width: 91.666667%;
+  z-index: -10;
+  transform: translateY(-80%);
+  display: block;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.bg-img {
+  width: 100%;
+  display: block;
+  opacity: 0.5;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+nav {
+  font-family: "Ovo", serif;
+  font-weight: 400;
+  font-size: var(--primary-fontsize);
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  justify-content: space-between;
+  padding: 0.5rem 8rem;
+  color: black;
+}
+nav .logo {
+  width: 200px;
+}
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+nav .mobile-menu-icon {
+  display: none;
+}
+nav button {
+  display: flex;
+  align-items: center;
+  font-family: "Ovo", serif;
+  font-weight: 400;
+  font-size: var(--primary-fontsize);
+  gap: 8px;
+  padding: 16px 28px;
+  border: 1px solid rgb(18, 18, 18);
+  border-radius: 28px;
+  background-color: white;
+  cursor: pointer;
+}
+nav button img {
+  width: 10px;
+}
+nav .mobile-items {
+  display: none;
+}
+
+#hero {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+#hero img {
+  width: 200px;
+  animation-name: popup;
+  animation-timing-function: ease-in-out;
+  animation-duration: 3s;
+  animation-timeline: view();
+  animation-range: entry 0% cover 50%;
+}
+#hero p {
+  display: flex;
+  align-items: center;
+  font-family: "Ovo", serif;
+  font-weight: 400;
+  font-size: var(--title-secondary);
+  gap: 10px;
+  font-size: 24px;
+}
+#hero p img {
+  width: 30px;
+}
+#hero h1 {
+  font-family: "Ovo", serif;
+  font-weight: 400;
+  font-size: var(--title-size);
+  text-align: center;
+}
+#hero .para1 {
+  font-family: "Ovo", serif;
+  font-weight: 400;
+  font-size: var(--primary-fontsize);
+  width: 50%;
+  line-height: 30px;
+  text-align: center;
+}
+#hero div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+#hero div button {
+  display: flex;
+  align-items: center;
+  font-family: "Ovo", serif;
+  font-weight: 400;
+  font-size: var(--primary-fontsize);
+  gap: 8px;
+  padding: 16px 28px;
+  border: 1px solid rgb(18, 18, 18);
+  border-radius: 28px;
+  background-color: white;
+  cursor: pointer;
+  font-family: "Outfit", serif;
+  font-weight: 400;
+}
+#hero div button img {
+  width: 10px;
+}
+#hero div .contact-btn {
+  background: #000;
+  color: white;
+}
+
+#about {
+  margin-top: 8rem;
+  margin-bottom: 2rem;
+  padding: 1rem 10rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#about .title {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+#about .title p {
+  font-family: "Ovo", serif;
+  font-weight: 400;
+  font-size: var(--title-secondary);
+}
+#about .title h2 {
+  font-family: "Ovo", serif;
+  font-weight: 400;
+  font-size: var(--title-size);
+}
+#about .about-division {
+  margin-top: 4rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  align-items: start;
+  gap: 4rem;
+}
+#about .about-division .image {
+  width: 40%;
+}
+#about .about-division .image img {
+  width: 100%;
+  border-radius: 25px;
+}
+#about .about-division .about-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: start;
+  width: 80%;
+}
+#about .about-division .about-content .top {
+  font-family: "Ovo", serif;
+  font-weight: 400;
+  font-size: var(--primary-fontsize);
+  max-width: 80%;
+  line-height: 2rem;
+}
+#about .about-division .about-content .about-cards {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-content: space-evenly;
+  margin-top: 2rem;
+}
+#about .about-division .about-content .about-cards .about-card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.3rem;
+  align-items: start;
+  width: 100%;
+  border: 2px solid #6e737a;
+  background-color: white;
+  padding: 30px 24px;
+  border-radius: 25px;
+  min-height: 15rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+#about .about-division .about-content .about-cards .about-card img {
+  width: 30px;
+  margin-top: 1rem;
+}
+#about .about-division .about-content .about-cards .about-card .card-title {
+  font-family: "Outfit", serif;
+  font-weight: 600;
+  color: #3f4752;
+}
+#about .about-division .about-content .about-cards .about-card .card-detail {
+  color: #6e737a;
+  font-family: "Outfit", serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+#about .about-division .about-content .about-cards .about-card:hover {
+  box-shadow: rgb(0, 0, 0) 5px 5px;
+  transform: translate(-4px, -4px);
+}
+#about .about-division .about-content .tools {
+  margin-top: 2rem;
+}
+#about .about-division .about-content .tools p {
+  color: #3f4752;
+  margin-bottom: 1rem;
+}
+#about .about-division .about-content .tools .tools-logos {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+#about .about-division .about-content .tools .tools-logos p {
+  border: 1px solid #3f4752;
+  background-color: white;
+  border-radius: 12px;
+  cursor: pointer;
+  padding: 0.7rem 0.8rem;
+  transition: all 0.2s linear;
+  place-items: center;
+}
+#about .about-division .about-content .tools .tools-logos p img {
+  width: 30px;
+}
+#about .about-division .about-content .tools .tools-logos p:hover {
+  transform: scale(1.05);
+}
+
+#work {
+  margin-top: 8rem;
+  margin-bottom: 2rem;
+  padding: 1rem 10rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#work .title {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+#work .title p {
+  font-family: "Ovo", serif;
+  font-weight: 400;
+  font-size: var(--title-secondary);
+}
+#work .title h2 {
+  font-family: "Ovo", serif;
+  font-weight: 400;
+  font-size: var(--title-size);
+}
+#work .title .work2 {
+  font-family: "Ovo", serif;
+  font-weight: 400;
+  font-size: var(--primary-fontsize);
+}
+#work .projects {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  gap: 1rem;
+}
+#work .projects .project-card {
+  transition: all 0.6s ease-out;
+  position: relative;
+  width: 100%;
+}
+#work .projects .project-card img {
+  width: 100%;
+}
+#work .projects .project-card div {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: absolute;
+  bottom: 20px;
+  width: 80%;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin-left: 2rem;
+  padding: 1rem;
+  text-align: center;
+  background: white;
+  font-size: 12px;
+  cursor: pointer;
+}
+#work .projects .project-card div button {
+  padding: 6px 13px;
+  border-radius: 12px;
+  background: white;
+  transition: all 0.2s linear;
+}
+#work .projects .project-card div button:hover {
+  background-color: greenyellow;
+  transform: scale(1.05);
+}
+#work .projects .project-card div .title {
+  font-family: "Outfit", serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+#work .projects .project-card:hover {
+  transform: scale(1.05);
+}
+
+#contact {
+  margin-top: 8rem;
+  margin-bottom: 2rem;
+  padding: 1rem 10rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#contact .title {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+#contact .title p {
+  font-family: "Ovo", serif;
+  font-weight: 400;
+  font-size: var(--title-secondary);
+}
+#contact .title h2 {
+  font-family: "Ovo", serif;
+  font-weight: 400;
+  font-size: var(--title-size);
+}
+#contact .title .work2 {
+  font-family: "Ovo", serif;
+  font-weight: 400;
+  font-size: var(--primary-fontsize);
+}
+#contact form {
+  margin-top: 4rem;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+#contact form div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+#contact form div input {
+  font-family: "Ovo", serif;
+  font-weight: 400;
+  font-size: var(--primary-fontsize);
+  width: 100%;
+  padding: 14px 12px;
+  outline: none;
+  border: 1px solid #3f4752;
+  border-radius: 8px;
+}
+#contact form textarea {
+  font-family: "Ovo", serif;
+  font-weight: 400;
+  font-size: var(--primary-fontsize);
+  width: 100%;
+  padding: 14px 12px;
+  outline: none;
+  border: 1px solid #3f4752;
+  border-radius: 8px;
+  resize: none;
+}
+#contact form button {
+  display: flex;
+  align-items: center;
+  font-family: "Ovo", serif;
+  font-weight: 400;
+  font-size: var(--primary-fontsize);
+  gap: 8px;
+  padding: 16px 28px;
+  border: 1px solid rgb(18, 18, 18);
+  border-radius: 28px;
+  background-color: white;
+  cursor: pointer;
+}
+#contact form button img {
+  width: 10px;
+}
+#contact form button img {
+  width: 20px;
+}
+
+hr {
+  width: 100%;
+  height: 2px; /* thickness */
+  background-color: #6e737a;
+  margin: 20px 0; /* optional spacing */
+}
+
+footer {
+  margin-top: 8rem;
+  margin-bottom: 2rem;
+  padding: 1rem 10rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  font-family: "Outfit", serif;
+  font-weight: 400;
+}
+footer img {
+  width: 300px;
+}
+footer .mail {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+footer .mail img {
+  width: 25px;
+}
+footer .footerdetail {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+footer .footerdetail div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+  nav {
+    position: relative;
+    padding: 0.5rem 2rem;
+  }
+  nav ul {
+    display: none;
+  }
+  nav button {
+    display: none;
+  }
+  nav .mobile-menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+  nav .mobile-menu-icon img {
+    width: 30px;
+  }
+  nav .mobile-menu-icon2 {
+    cursor: pointer;
+  }
+  nav .mobile-items {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    position: absolute;
+    top: 0rem;
+    right: -12.5rem;
+    padding: 2rem;
+    height: 90vh;
+    width: 200px;
+    background-color: rgb(254, 242, 227);
+    transition: all 0.3s linear;
+  }
+  nav #mobile-toggle:checked ~ .mobile-items {
+    right: 0;
+  }
+  #hero .para1 {
+    width: 80%;
+  }
+  #hero div {
+    margin-top: 1rem;
+  }
+  #about {
+    padding: 0.5rem 2rem;
+  }
+  #about .about-division {
+    flex-direction: column;
+  }
+  #about .about-division .image {
+    width: 100%;
+  }
+  #about .about-division .image img {
+    width: 100%;
+  }
+  #about .about-division .about-content {
+    align-items: center;
+    width: 100%;
+  }
+  #about .about-division .about-content .top {
+    max-width: 100%;
+  }
+  #about .about-division .about-content .about-cards {
+    flex-direction: column;
+  }
+  #about .about-division .about-content .tools {
+    width: 90%;
+  }
+  #work {
+    padding: 0.5rem 2rem;
+  }
+  #work .projects {
+    grid-template-columns: repeat(1, 1fr);
+    width: 70%;
+  }
+  #contact {
+    padding: 0.5rem 2rem;
+  }
+  #contact form {
+    width: 100%;
+  }
+  footer {
+    padding: 0.5rem 2rem;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  #about {
+    padding: 0.5rem 2rem;
+  }
+  #about .about-division {
+    flex-direction: column;
+  }
+  #about .about-division .image {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #about .about-division .image img {
+    width: 60%;
+  }
+  #about .about-division .about-content {
+    align-items: center;
+    width: 100%;
+  }
+  #work {
+    padding: 0.5rem 2rem;
+  }
+  #work .projects {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+  #contact form {
+    width: 80%;
+  }
+}/*# sourceMappingURL=style.css.map */
